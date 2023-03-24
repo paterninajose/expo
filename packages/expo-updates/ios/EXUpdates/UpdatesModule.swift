@@ -92,7 +92,7 @@ public final class UpdatesModule: Module {
 
       var extraHeaders: [String: Any] = [:]
       updatesService.database.databaseQueue.sync {
-        extraHeaders = FileDownloader.extraHeaders(
+        extraHeaders = FileDownloader.extraHeadersForRemoteUpdateRequest(
           withDatabase: updatesService.database,
           config: config,
           launchedUpdate: updatesService.launchedUpdate,
